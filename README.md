@@ -1,3 +1,3 @@
 # db
 
-download Quality of Government form: http://qog.pol.gu.se/data
+download Quality of Government from: http://qog.pol.gu.se/data
