@@ -1,3 +1,3 @@
 # db
 
-download Quality of Government from: http://qog.pol.gu.se/data
+download Doing Business from: http://www.doingbusiness.org/data
