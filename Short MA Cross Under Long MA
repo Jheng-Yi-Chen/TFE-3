@@ -1,0 +1,24 @@
+//Short MA Cross/Under Long MA
+
+input: lenght1(5),length2(20);
+variable: var1(0),var2(0),var3(0),var4(0);
+
+var1 = average(close,lenght1);
+var2 = average(close,length2);
+
+//var4=tl_setextright(1,true);
+
+condition1 = var1 cross over var2;
+condition2 = var1 cross under var2;
+
+plot1(var1,"Short MA");
+plot2(var2,"Long MA");
+
+//Short MA Cross Over Long MA
+if condition1 then var3 = lowest(low,1);
+plot3(var3, "Short MA Cross Over Long MA");
+
+//Short MA Cross Under Long MA
+//if condition2 then var4 = lowest(low,1);
+if condition2 then var4 = highest(high,1);
+plot4(var4, "Short MA Cross Under Long MA");
