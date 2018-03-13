@@ -6,8 +6,6 @@ variable: var1(0),var2(0),var3(0),var4(0);
 var1 = average(close,lenght1);
 var2 = average(close,length2);
 
-//var4=tl_setextright(1,true);
-
 condition1 = var1 cross over var2;
 condition2 = var1 cross under var2;
 
