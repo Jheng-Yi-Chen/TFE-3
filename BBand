@@ -1,4 +1,3 @@
-// TX_1_BBand
 
 input:length1(20),length2(30),length3(1),length4(-2),length5(1),length6(10),length7(10),length8(8),length9(3000);
 input:BollingerPrice(close),NumDevsDn(2);
