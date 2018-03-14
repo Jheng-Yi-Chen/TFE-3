@@ -35,9 +35,6 @@ setstopcontract;
 setstoploss(3000);
 
 //stop loss
-
-
-//stop loss
 if marketposition > 0 and (close - close[1] < -length8) then
 	sell next bar at open or higher;
 
