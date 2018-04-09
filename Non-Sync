@@ -1,0 +1,8 @@
+//Non-Sync judgement
+If RSIHigh[0] < RSIHigh[1] and PriceHigh[0] >= PriceHigh[1] then begin
+   Value3=arw_new(date,time,high,True);
+   Value3=arw_new_self(date,time,RSIHigh,True);
+   value4=tl_new(Date1, Time1, PriceHigh, Date1[1], Time1[1], PriceHigh[1]);
+   value4=tl_new_self(Date1, Time1, RSIHigh, Date1[1], Time1[1], RSIHigh[1]);
+   sellshort ("S1") 1 contracts next bar at open;
+end;
