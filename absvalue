@@ -1,0 +1,1 @@
+condition3 = absvalue(CloseD(1) - OpenD(0)) <= length2;
