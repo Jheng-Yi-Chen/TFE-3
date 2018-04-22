@@ -1,0 +1,14 @@
+var:LastTradingDay(false);
+if DAYofMonth(Date) > 14 and DAYofMonth(Date) < 22 and DAYofWeek(Date)= 3 then begin  
+        LastTradingDay = True;
+end else begin  
+        LastTradingDay = False;  
+end;
+
+if LastTradingDay then begin 
+	if sessionlastbar then begin
+		if marketposition >0 then buy next bar at market;
+		if marketposition <0 then sellshort next bar at market;
+	end;
+	setexitonclose;
+end;
