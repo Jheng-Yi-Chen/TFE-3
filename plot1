@@ -7,5 +7,5 @@ var2 = average(close,length2);
 condition1 = var1 cross over var2;
 condition2 = var1 cross under var2;
 
-//plot1(var1,"Short MA");
-//plot2(var2,"Long MA");
+plot1(var1,"Short MA");
+plot2(var2,"Long MA");
