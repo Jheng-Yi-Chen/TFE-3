@@ -1,0 +1,11 @@
+input: lenght1(10),length2(20);
+variable: var1(0),var2(0),var3(0),var4(0);
+
+var1 = average(close,lenght1);
+var2 = average(close,length2);
+
+condition1 = var1 cross over var2;
+condition2 = var1 cross under var2;
+
+//plot1(var1,"Short MA");
+//plot2(var2,"Long MA");
