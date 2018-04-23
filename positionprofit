@@ -1,0 +1,20 @@
+inputs: Price(close),size(10),Mvalue(200);
+variables: profit(0),target(0),avgCost(0),var0(0);
+
+profit = positionprofit;
+target = AverageFC(Price,size);
+avgCost = avgentryprice;
+var0 = (avgcost*Mvalue + commission) / Mvalue;
+
+condition1 = profit > 0;
+condition2 = target > var0;
+
+if condition1 then begin
+	if condition2 then begin
+		setstopposition;
+		setprofittarget(target*Mvalue); 
+	end else begin
+		setstopposition;
+		setprofittarget(var0*Mvalue);
+	end;
+end;
