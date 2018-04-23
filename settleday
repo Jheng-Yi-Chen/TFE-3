@@ -1,0 +1,27 @@
+Var:mark (0);
+
+if D >D[1] then settledayTW=false ;
+
+if Month (D )<>Month(D)[1] then mark=0 ;
+
+if (DayOfMonth( D)>= 15 and DayOfMonth( D)<= 21 and DayOfWeek( D)= 3) then begin
+
+  settledayTW= True;
+  mark=1;
+  end
+    
+else
+  if mark=0 and
+     (
+       (DayOfMonth (D )>=16 and DayOfMonth (D )<=22 and DayOfWeek (D )=4) or
+       (DayOfMonth (D )>=17 and DayOfMonth (D )<=23 and DayOfWeek (D )=5) or
+       (DayOfMonth (D )>=18 and DayOfMonth (D )<=24 and DayOfWeek (D )=6) or
+       (DayOfMonth (D )>=20 and DayOfMonth (D )<=26 and DayOfWeek (D )=1) or
+       (DayOfMonth (D )>=21 and DayOfMonth (D )<=27 and DayOfWeek (D )=2) or
+       (DayOfMonth (D )>=22)
+      ) then begin
+
+    settledayTW=True ;
+    mark=1 ;
+
+  end;
