@@ -1,6 +1,3 @@
-inputs: Price(close),size(10),Mvalue(200);
-variables: profit(0),target(0),avgCost(0),var1(0);
-
 profit = positionprofit;
 target = AverageFC(Price,size);
 avgCost = avgentryprice;
