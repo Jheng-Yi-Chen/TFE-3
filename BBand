@@ -1,27 +1,8 @@
-
-input:length1(20),length2(30),length3(1),length4(-2),length5(1),length6(10),length7(10),length8(8),length9(3000);
-input:BollingerPrice(close),NumDevsDn(2);
-variable:var1(0),var2(0);
-
 var1 = BollingerBand(BollingerPrice, length1, NumDevsDn);
 var2 = BollingerBand(BollingerPrice, length1, -NumDevsDn);
 
-condition1 = time <= 1330;
-condition2 = time > 1330;
-
 condition3 = absvalue(CloseD(1) - OpenD(0)) <= length2;
 condition4 = (close - close[length6]) > -length7;
-
-condition5 = close cross over var1;
-condition6 = close cross under var1;
-condition7 = close cross over var2;
-condition8 = close cross under var2;
-
-//if condition3 and condition1 and condition4 and condition7 then
-//	buy ("Buy, BBand") this bar on close;
-
-//if condition3 and condition1 and condition4 and condition7 then
-//	buy ("Buy, BBand") 1 contract next bar at open or lower;
 
 if condition3 and condition1 and condition4 and condition8 then
 	buy ("Buy, BBand") 1 contract next bar at open or lower;
@@ -29,19 +10,8 @@ if condition3 and condition1 and condition4 and condition8 then
 if marketposition > 0 and condition1 and condition5 then
 	sell next bar at open or higher;
 
-//stop loss
 setstopcontract;
-//setstoploss(length9);
 setstoploss(3000);
 
-//stop loss
 if marketposition > 0 and (close - close[1] < -length8) then
 	sell next bar at open or higher;
-
-//stop loss
-//if marketposition > 0 and condition1 and condition7 then
-//	sell next bar at open or higher;
-
-//time > 1330
-if marketposition > 0 and condition2 then
-	sell all share next bar at open;
